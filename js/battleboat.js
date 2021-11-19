@@ -1,3 +1,11 @@
+// TODO: Import and initialize Itly
+// import itly, { Loggers } from './itly';
+//
+// itly.load({
+// 	environment: 'development',
+// 	logger: Loggers.Console,
+// });
+
 (function() {
 // Battleboat
 // Bill Mei, 2014
@@ -184,6 +192,8 @@ function Game(size) {
 	this.shotsTaken = 0;
 	this.createGrid();
 	this.init();
+	// TODO: Enable after pulling itly SDK
+	//   itly.initializeGame();
 }
 Game.size = 10; // Default grid size is 10x10
 Game.gameOver = false;
@@ -288,6 +298,9 @@ Game.prototype.rosterListener = function(e) {
 	document.getElementById(Game.placeShipType).setAttribute('class', 'placing');
 	Game.placeShipDirection = parseInt(document.getElementById('rotate-button').getAttribute('data-direction'), 10);
 	self.placingOnGrid = true;
+
+	// TODO: Enable after pulling itly SDK
+	// 	 itly.selectShip( { placeShipType: Game.placeShipType } )
 };
 // Creates click event listeners on the human player's grid to handle
 // ship placement after the user has selected a ship name
